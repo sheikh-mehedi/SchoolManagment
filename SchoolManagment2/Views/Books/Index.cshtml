@@ -1,0 +1,33 @@
+﻿@model IEnumerable<SchoolManagment2.Models.Book>
+
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model=>model.B_Name)
+            </th>
+
+            <th>Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => i.B_Name)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@i.B_Id">Edit</a>
+                    <a asp-action="Details" asp-route-id="@i.B_Id">Details</a>
+                    <a asp-action="Delete" asp-route-id="@i.B_Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

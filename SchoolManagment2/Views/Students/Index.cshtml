@@ -1,0 +1,59 @@
+﻿@model IEnumerable<SchoolManagment2.ViewModels.StudentTeacherVM>
+
+
+
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.S_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.T_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.B_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.C_Name)
+            </th>
+
+
+            
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => i.S_Name)
+                </td>
+               <td>
+                    @Html.DisplayFor(modelItem => i.T_Name)
+                </td>
+                  <td>
+                    @Html.DisplayFor(modelItem => i.B_Name)
+                </td>
+                    <td>
+                    @Html.DisplayFor(modelItem => i.C_Name)
+                </td>
+               
+                <td>
+                    <a asp-action="Edit" asp-route-id="@i.S_Id">Edit</a>
+                    <a asp-action="Details" asp-route-id="@i.S_Id">Details</a>
+                    <a asp-action="Delete" asp-route-id="@i.S_Id">Delete</a>
+                </td>
+
+            </tr>
+
+        }
+    </tbody>
+</table>

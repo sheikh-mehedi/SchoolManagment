@@ -1,0 +1,50 @@
+﻿@model SchoolManagment2.Models.Student
+
+
+<h1>Edit</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            
+            <input type="hidden" asp-for="S_Id" />
+            <div class="form-group ">
+                <label asp-for="S_Name" class="control-label"></label>
+                <input asp-for="S_Name" class="form-control" />
+               
+            </div>
+
+            <div class="form-group mb-2">
+                <label>Choose your Teacher Name</label>
+                <select asp-for="T_Id" asp-items="@(new SelectList(ViewBag.teacher, "T_Id","T_Name"))" class="form-select">
+                    <option selected disabled>Select Teacher</option>
+                </select>
+            </div>
+            <div class="form-group mb-2">
+                <label>Choose your Book Name</label>
+                <select asp-for="B_Id" asp-items="@(new SelectList(  ViewBag.book, "B_Id","B_Name"))" class="form-select">
+                    <option selected disabled>Select Book</option>
+                </select>
+            </div>
+
+            <div class="form-group mb-2">
+                <label>Choose your Class Name</label>
+                <select asp-for="C_Id" class="form-select">
+                    <option selected disabled>Select Class</option>
+                </select>
+            </div>
+         
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary " />
+            </div>
+
+
+        </form>
+    </div>
+</div>
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

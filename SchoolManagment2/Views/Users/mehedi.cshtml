@@ -1,0 +1,33 @@
+﻿@model SchoolManagment2.Models.User
+
+<span class="form-control " id="back">Mehedi hasan</span>
+
+<button class="btn btn-success btn-block mb-4" id="btn"> Click Here </button>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn").click(function () {
+                debugger;
+                var mehediId = $('#back').text();
+                console.log(mehediId);
+                if (mehediId !== "") {
+                    $.ajax({
+                        url: '/Users/GetClassByuser',
+                        type: 'post',
+                        data: { mehediId: mehediId },
+                        success: function (data) {
+                         
+                        }
+                    });
+                }
+            });
+        });  
+    </script>
+
+}
+
+
+
+
